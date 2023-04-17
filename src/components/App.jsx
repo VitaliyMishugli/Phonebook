@@ -22,6 +22,7 @@ export const App = () => {
   }, [dispatch])
 
   return (
+    <h2>Phonebook</h2>
     !isRefreshing && (
       <>
         <Suspense fallback={<div>Loading...</div>}>
