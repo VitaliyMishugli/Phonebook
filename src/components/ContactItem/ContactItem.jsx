@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import contactsOperations from "redux/contacts/contacts-operations";
+import Button from '@mui/material/Button';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -7,5 +8,6 @@ export const ContactItem = ({ id, name, number }) => {
     <>
       <span style={{ marginRight: '10px' }}>{name} : {number}</span>
       <button onClick={() => dispatch(contactsOperations.deleteContact(id))}>Delete</button>
+      <Button variant="contained">Hello World</Button>
     </>)
 }

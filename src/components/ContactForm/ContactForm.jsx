@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from "redux/contacts/contacts-operations";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormContainer, InputAndLabelContainer, InputsContainer, ErrorText } from './ContactForm.styled';
+// import Alert from '@mui/material/Alert';
+import { Alert } from '@mui/material';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -33,7 +35,11 @@ export const ContactForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     const newContact = { ...values, id: nanoid() }
     if (storeContacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
-      alert(`${newContact.name} is already in contacts`)
+      // alert(`${newContact.name} is already in contacts`);
+      <Alert severity="warning">
+        {/* <AlertTitle>Warning</AlertTitle> */}
+        This is a warning alert — <strong>check it out!</strong>
+      </Alert>
     }
     else {
       dispatch(contactsOperations.createContact(newContact));
