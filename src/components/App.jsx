@@ -15,7 +15,6 @@ const ContactsView = lazy(() => import('../pages/ContactsView.jsx'));
 export const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-  console.log(isRefreshing)
 
   useEffect(() => {
     dispatch(authOperations.refreshCurrentUser())

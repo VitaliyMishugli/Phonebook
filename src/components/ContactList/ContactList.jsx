@@ -12,7 +12,6 @@ export const ContactList = () => {
 
   const storeFilter = useSelector(state => state.filter);
   const storeContacts = useSelector(state => state.contacts.items);
-  console.log(storeContacts);
 
   const visibleContacts = storeContacts.filter(contact => contact.name.toLowerCase().includes(storeFilter.toLowerCase()));
   
