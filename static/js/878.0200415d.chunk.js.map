@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/878.0200415d.chunk.js","mappings":"2JAIA,UAJiB,WACf,OAAO,sEACR,C","sources":["pages/HomeView.jsx"],"sourcesContent":["const HomeView = () => {\n  return <h1>Page!!! Welcome to \"Contact book\" service!</h1>\n}\n\nexport default HomeView;"],"names":[],"sourceRoot":""}
