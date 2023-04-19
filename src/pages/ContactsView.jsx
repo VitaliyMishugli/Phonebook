@@ -6,7 +6,7 @@ const ContactsView = () => {
   return (
     <div>
       <h2>Book of contacts</h2>
-      {/* <ContactForm /> */}
+      <ContactForm />
       <h2>Contacts</h2>
       <Filter />
       <ContactList />

@@ -1,11 +1,12 @@
 import { nanoid } from 'nanoid';
 import * as yup from 'yup';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from "redux/contacts/contacts-operations";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormContainer, InputAndLabelContainer, InputsContainer, ErrorText } from './ContactForm.styled';
 // import Alert from '@mui/material/Alert';
-import { Alert } from '@mui/material';
+import { Alert, AlertTitle, Button } from '@mui/material';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -26,6 +27,8 @@ export const ContactForm = () => {
   const inputNumberId = nanoid();
   const dispatch = useDispatch();
   const storeContacts = useSelector(state => state.contacts.items);
+  const [isAddedName, setIsAddedName] = useState(false);
+  const [contactName, setContactName] = useState('');
 
   const initialValues = {
     name: '',
@@ -33,18 +36,28 @@ export const ContactForm = () => {
   }
 
   const handleSubmit = (values, { resetForm }) => {
-    const newContact = { ...values, id: nanoid() }
+    const newContact = { ...values, id: nanoid() };
+    setContactName(newContact.name);
     if (storeContacts.find(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
       // alert(`${newContact.name} is already in contacts`);
-      <Alert severity="warning">
-        {/* <AlertTitle>Warning</AlertTitle> */}
-        This is a warning alert — <strong>check it out!</strong>
-      </Alert>
+      //  return  <Alert severity="warning">
+      //     <AlertTitle>Warning</AlertTitle>
+      //     This is a warning alert — <strong>check it out!</strong>
+      //   </Alert>
+      setIsAddedName(true);
     }
     else {
       dispatch(contactsOperations.createContact(newContact));
     }
     resetForm();
+  }
+  if (isAddedName) {
+    return (
+      <Alert severity="warning">
+        <AlertTitle >Warning</AlertTitle>
+        {contactName} is already in contacts   
+        <Button style={{ marginLeft: '10px' }} variant="contained" onClick={()=>{setIsAddedName(false)}}>Add another name</Button>
+      </Alert>)
   }
 
   return (
@@ -81,9 +94,9 @@ export const ContactForm = () => {
               <FormError name='number' />
             </InputAndLabelContainer>
           </InputsContainer>
-          <button type='submit'>Add contact</button>
+          <Button variant="contained" type='submit'>Add contact</Button>
         </Form>
       </Formik>
-    </FormContainer>
-  )
+    </FormContainer>)
+  
 }

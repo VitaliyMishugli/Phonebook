@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { BsPersonCircle } from 'react-icons/bs';
 import { NavItem, HeaderElement } from './UserMenu.styled';
 import { useAuth } from 'hooks';
+import { Alert, AlertTitle, Button } from '@mui/material';
 import authOperations from 'redux/auth/auth-operations';
 
 export const UserMenu = () => {
@@ -17,10 +18,9 @@ export const UserMenu = () => {
           Welcome, {user.name}
         </NavItem>
         <NavItem>
-          <button onClick={() => {
-            console.log('logout works');
+          <Button variant="contained" onClick={() => {
             dispatch(logout())
-          }}>Logout</button>
+          }}>Logout</Button>
         </NavItem>
       </HeaderElement>
     </>
