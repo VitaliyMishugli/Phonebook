@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from "redux/contacts/contacts-operations";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormContainer, InputAndLabelContainer, InputsContainer, ErrorText } from './ContactForm.styled';
-// import Alert from '@mui/material/Alert';
 import { Alert, AlertTitle, Button } from '@mui/material';
 
 const schema = yup.object().shape({

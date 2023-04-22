@@ -6,13 +6,21 @@ import { App } from 'components/App';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
-import { theme } from './constants';
+// import { theme } from './constants';
+import { ThemeProvider, createTheme } from '@mui/material';
 import './index.css';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ccc'
+    }
+  }
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <ThemeProvider theme={theme}> */}
+    <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {/* <BrowserRouter basename="/Phonebook/"> */}
@@ -21,6 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </BrowserRouter>           
         </PersistGate>
       </Provider>
-    {/* </ThemeProvider> */}
+    </ThemeProvider>
   </React.StrictMode>
 );
