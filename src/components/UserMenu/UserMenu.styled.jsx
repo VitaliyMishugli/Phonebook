@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 export const HeaderElement = styled.div`
  display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 

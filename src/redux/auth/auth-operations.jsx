@@ -13,13 +13,14 @@ const token = {
 }
 
 // Реєстрація нового юзера
-const register = createAsyncThunk('auth/register', async credentials => {
+const register = createAsyncThunk('auth/register', async (credentials, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
     return data;    
   } catch (error) {
-    return error;
+    alert("There's not such user. Register please!");
+    return thunkAPI.rejectWithValue(error.message); 
   }
 })
 
@@ -30,7 +31,7 @@ const login = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
     token.set(data.token);
     return data;
   } catch (error) {
-    alert("There isn't such user. Register please!");
+    alert("There's not such user. Register please!");
     return thunkAPI.rejectWithValue(error.message); 
   }
 })

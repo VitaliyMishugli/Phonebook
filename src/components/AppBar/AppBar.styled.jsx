@@ -6,8 +6,9 @@ export const HeaderBar = styled.header`
   display: flex;
   justify-content: space-between; 
   margin: 10px 10px;
-  border-bottom: 1px solid black;
-  padding: 7px
+  padding: 7px;
+  
+
 `;
 
 export const NavItem = styled(NavLink)`
