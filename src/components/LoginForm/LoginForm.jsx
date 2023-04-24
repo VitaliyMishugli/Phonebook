@@ -26,28 +26,14 @@ export const LoginForm = () => {
           type="email"
           name="email"
           placeholder='Enter email'
-          style={{
-            width: '100%',
-            padding: '10px',
-            margin: '10px 0',
-            border: '1px solid grey',
-            borderRadius: '6px',
-            backgroundColor: '#ebe2dd',
-          }}         
+          className={css.input}
         />
 
         <input
           type="password"
           name="password"
           placeholder='Enter password'
-          style={{
-            width: '100%',
-            padding: '10px',
-            margin: '10px 0',
-            border: '1px solid grey',
-            borderRadius: '6px',
-            backgroundColor: '#ebe2dd',
-          }}
+          className={css.input}
         />
         <Button variant="contained" type="submit">Log In</Button>
       </form>

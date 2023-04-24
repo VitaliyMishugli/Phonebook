@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilter } from 'redux/filter/filter-slice';
+import css from './Filter.module.css';
 import { Paper } from "@mui/material";
 
 export const Filter = () => {
@@ -12,14 +13,7 @@ export const Filter = () => {
       <input
         type="text"
         placeholder='Enter contact name or a letter'
-        style={{
-          width: '100%',
-          padding: '10px',
-          margin: '10px 0',
-          border: '1px solid grey',
-          borderRadius: '6px',
-          backgroundColor: '#ebe2dd',
-        }}
+        className={css.input}
         value={storeFilter}
         onChange={(e) => dispatch(changeFilter(e.currentTarget.value))} />
 
