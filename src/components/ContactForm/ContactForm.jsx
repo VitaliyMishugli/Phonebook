@@ -1,6 +1,3 @@
-// Робоча копія з формік
-
-
 import { nanoid } from 'nanoid';
 import * as yup from 'yup';
 import { useState } from 'react';
@@ -59,7 +56,7 @@ export const ContactForm = () => {
 
   return (
     <Paper sx={{
-      padding: '10px', width: '700px', margin: 'auto', backgroundColor: 'secondary.main', display: 'flex',
+      padding: '10px', width: '500px', margin: 'auto', backgroundColor: 'secondary.main', display: 'flex',
       flexDirection: 'column',
       alignItems: 'stretch',
       gap: '5px'
@@ -74,6 +71,15 @@ export const ContactForm = () => {
             <InputAndLabelContainer>
               <label htmlFor={inputNameId}>Name</label>
               <Field
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  margin: '10px 0',
+                  border: '1px solid grey',
+                  borderRadius: '6px',
+                  backgroundColor: 'secondary.main',
+                  capacity: "100%"
+                }}
                 id={inputNameId}
                 autoComplete="off"
                 type="text"
@@ -87,6 +93,13 @@ export const ContactForm = () => {
             <InputAndLabelContainer>
               <label htmlFor={inputNumberId}>Number</label>
               <Field
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  margin: '10px 0',
+                  border: '1px solid grey',
+                  borderRadius: '6px'
+                }}
                 id={inputNumberId}
                 type="tel"
                 name="number"
@@ -96,7 +109,7 @@ export const ContactForm = () => {
               <FormError name='number' />
             </InputAndLabelContainer>
           </InputsContainer>
-          <Button variant="contained" type='submit'>Add contact</Button>
+          <Button style={{width:'100%'}} variant="contained" type='submit'>Add contact</Button>
         </Form>
       </Formik>
     </Paper>)

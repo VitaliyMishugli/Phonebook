@@ -18,9 +18,9 @@ export const Filter = () => {
       /> */}
 
       <label htmlFor="demo-helper-text-misaligned">
-        <Typography variant='h4'>
+        {/* <Typography variant='h4'>
           Find contacts by name
-        </Typography>
+        </Typography> */}
        
       </label>
       <TextField

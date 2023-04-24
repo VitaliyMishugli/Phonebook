@@ -10,20 +10,20 @@ const ContactsView = () => {
         padding: '10px',
         width: '100%',
         margin: '20px auto',
-        backgroundColor: 'secondary.main', 
+        backgroundColor: '#fff', 
         textAlign: 'center'
       }}>       
-        <Typography variant='h3'>My contacts book</Typography>
+        <Typography variant='h3'>Add new contact</Typography>
       </Paper>
       <ContactForm />
       <Paper sx={{
         padding: '10px',
         width: '100%',
         margin: '20px auto',
-        backgroundColor: 'secondary.main',
+        backgroundColor: '#fff',
         textAlign: 'center'
       }}>
-        <Typography variant='h3'> Contact list</Typography>
+        <Typography variant='h3'>Find contacts by name</Typography>
        
       </Paper>
       <Filter />

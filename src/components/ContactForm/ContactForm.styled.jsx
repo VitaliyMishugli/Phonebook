@@ -26,6 +26,7 @@ export const ErrorText = styled.p`
   color: 'red';
 `;
 
+
   // colors: {
   //   white: '#ffffff',
   //   black: '#010101',
