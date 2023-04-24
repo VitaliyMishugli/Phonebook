@@ -1,13 +1,9 @@
-import { Helmet } from 'react-helmet';
 import { LoginForm } from 'components/LoginForm/LoginForm';
 import { Paper } from '@mui/material';
 
 const LoginView =()=> {
   return (
     <div>
-      {/* <Helmet>
-        <title>Login</title>
-      </Helmet> */}
       <Paper sx={{
         padding: '20px',
         width: '500px',

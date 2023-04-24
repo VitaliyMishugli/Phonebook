@@ -10,20 +10,16 @@ export const AuthNav = () => {
   return (
     <>
       <HeaderElement>
-      {
+        {
           navItems.map(({ href, text }) => (
-           
             <NavItem key={href} to={href}>
               <Button variant="contained">
                 {text}
               </Button>
-              </NavItem>
-             
-          
-          
-        ))
+            </NavItem>
+          ))
         }
-        </HeaderElement >
+      </HeaderElement >
     </>
   )
 }

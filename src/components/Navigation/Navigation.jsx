@@ -8,14 +8,11 @@ export const Navigation = () => {
   return (
     <>
       <HeaderElement>
-
         <NavItem to='home'>
           <Button variant="contained">
             Home
           </Button>
         </NavItem>
-
-
         {isLoggedIn &&
           (<NavItem to='contacts'>
             <Button variant="contained">
@@ -23,17 +20,6 @@ export const Navigation = () => {
             </Button>
           </NavItem>)
         }
-
-
-
-        {/* <NavItem to='home'>
-          Home
-        </NavItem>
-        {isLoggedIn && 
-         ( <NavItem to='contacts'>
-            Contacts
-          </NavItem>)
-        } */}
       </HeaderElement>
     </>
   )

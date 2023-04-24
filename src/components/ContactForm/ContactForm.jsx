@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import contactsOperations from "redux/contacts/contacts-operations";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { FormContainer, InputAndLabelContainer, InputsContainer, ErrorText } from './ContactForm.styled';
-import { Alert, AlertTitle, Button, Paper, TextField } from '@mui/material';
+import { InputAndLabelContainer, InputsContainer, ErrorText } from './ContactForm.styled';
+import { Alert, AlertTitle, Button, Paper} from '@mui/material';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -47,7 +47,7 @@ export const ContactForm = () => {
   }
   if (isAddedName) {
     return (
-      <Alert severity="warning">
+      <Alert severity="warning" sx={{ width: '500px', margin:'20px auto'}}>
         <AlertTitle >Warning</AlertTitle>
         {contactName} is already in contacts
         <Button style={{ marginLeft: '10px' }} variant="contained" onClick={() => { setIsAddedName(false) }}>Add another name</Button>
@@ -71,14 +71,14 @@ export const ContactForm = () => {
             <InputAndLabelContainer>
               <label htmlFor={inputNameId}>Name</label>
               <Field
+                placeholder='Enter new contact name'
                 style={{
                   width: '100%',
                   padding: '10px',
                   margin: '10px 0',
                   border: '1px solid grey',
                   borderRadius: '6px',
-                  backgroundColor: 'secondary.main',
-                  capacity: "100%"
+                  backgroundColor: '#ebe2dd',
                 }}
                 id={inputNameId}
                 autoComplete="off"
@@ -93,12 +93,14 @@ export const ContactForm = () => {
             <InputAndLabelContainer>
               <label htmlFor={inputNumberId}>Number</label>
               <Field
+                placeholder='Enter new contact number'
                 style={{
                   width: '100%',
                   padding: '10px',
                   margin: '10px 0',
                   border: '1px solid grey',
-                  borderRadius: '6px'
+                  borderRadius: '6px',
+                  backgroundColor: '#ebe2dd',
                 }}
                 id={inputNumberId}
                 type="tel"
@@ -109,7 +111,7 @@ export const ContactForm = () => {
               <FormError name='number' />
             </InputAndLabelContainer>
           </InputsContainer>
-          <Button style={{width:'100%'}} variant="contained" type='submit'>Add contact</Button>
+          <Button style={{ width: '100%', padding: '10px' }} variant="contained" type='submit'>Add contact</Button>
         </Form>
       </Formik>
     </Paper>)

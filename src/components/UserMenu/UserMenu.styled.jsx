@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-
 export const HeaderElement = styled.div`
  display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 
 export const NavItem = styled(NavLink)`
   margin: 10px 10px;
@@ -16,12 +14,4 @@ export const NavItem = styled(NavLink)`
   text-decoration: none;
   color: blue;
   position: relative;
-  // &.active{
-  //   background-color: tomato;
-  //   color: white
-  // }
-  // :hover:not(.active),
-  // :focus-visible:not(.active){
-  //   color: tomato
-  // }
 `;

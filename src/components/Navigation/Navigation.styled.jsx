@@ -13,19 +13,4 @@ export const NavItem = styled(NavLink)`
   text-decoration: none;
   color: blue;
   position: relative;  
-
-// margin: 10px 10px;
-  // padding: 3px;
-  // border-radius: 4px;
-  // text-decoration: none;
-  // color: blue;
-  // position: relative;
-  // &.active{
-  //   background-color: tomato;
-  //   color: white
-  // }
-  // :hover:not(.active),
-  // :focus-visible:not(.active){
-  //   color: tomato
-  // }
 `;

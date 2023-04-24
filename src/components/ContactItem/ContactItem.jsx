@@ -12,9 +12,7 @@ export const ContactItem = ({ id, name, number }) => {
           <span style={{ marginRight: '10px' }}>{name} : {number}</span>
           <Button variant="contained" onClick={() => dispatch(contactsOperations.deleteContact(id))}>Delete</Button>
         </ContactContainer>
-        
       </Paper>
-      {/* <Typography variant='h1'>It's Typography</Typography> */}
       
     </>)
 }

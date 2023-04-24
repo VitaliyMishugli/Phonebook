@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilter } from 'redux/filter/filter-slice';
-import { Paper, TextField, Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 
 export const Filter = () => {
   const storeFilter = useSelector(state => state.filter);
@@ -9,27 +9,20 @@ export const Filter = () => {
 
   return (
     <Paper sx={{ padding: '10px', width: '500px', margin: 'auto', backgroundColor: 'secondary.main', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* <p> Find contacts by name</p> */}
-
-      {/* <TextField
-        helperText="Please enter your name"
-        id="demo-helper-text-misaligned"
-        label="Name"
-      /> */}
-
-      <label htmlFor="demo-helper-text-misaligned">
-        {/* <Typography variant='h4'>
-          Find contacts by name
-        </Typography> */}
-       
-      </label>
-      <TextField
-        helperText="Please enter contact name"
-        id="demo-helper-text-misaligned"
-        label="Name"
+      <input
         type="text"
+        placeholder='Enter contact name or a letter'
+        style={{
+          width: '100%',
+          padding: '10px',
+          margin: '10px 0',
+          border: '1px solid grey',
+          borderRadius: '6px',
+          backgroundColor: '#ebe2dd',
+        }}
         value={storeFilter}
         onChange={(e) => dispatch(changeFilter(e.currentTarget.value))} />
+
     </Paper>
   )
 }

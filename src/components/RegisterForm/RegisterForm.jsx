@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import authOperations  from 'redux/auth/auth-operations';
 import css from './RegisterForm.module.css';
-import { Button, TextField } from '@mui/material';
+import { Button} from '@mui/material';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -22,37 +22,47 @@ export const RegisterForm = () => {
   return (
     <>
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-        {/* <label className={css.label}>
-          Username */}
-        <TextField
-          helperText="Enter your name"
-          id="demo-helper-text-misaligned"
-          label="Name"
-          name="name" 
-           type="text" />
-        {/* </label> */}
+        <input
+          name="name"
+          type="text"
+          placeholder='Enter name'
+          style={{
+            width: '100%',
+            padding: '10px',
+            margin: '10px 0',
+            border: '1px solid grey',
+            borderRadius: '6px',
+            backgroundColor: '#ebe2dd',
+          }}
+        />
 
-
-        {/* <label className={css.label}>
-          Email */}
-        <TextField
-          helperText="Enter your email"
-          id="demo-helper-text-misaligned"
-          label="Email"
+        <input
+          type="email"
           name="email"
-          type="email" />
-        {/* </label> */}
+          placeholder='Enter email'
+          style={{
+            width: '100%',
+            padding: '10px',
+            margin: '10px 0',
+            border: '1px solid grey',
+            borderRadius: '6px',
+            backgroundColor: '#ebe2dd',
+          }}
+        />
 
-
-        {/* <label className={css.label}>
-          Password */}
-        <TextField
-          helperText="Enter your password"
-          id="demo-helper-text-misaligned"
-          label="Password"
+        <input
           type="password"
-          name="password" />
-        {/* </label> */}
+          name="password"
+          placeholder='Enter password'
+          style={{
+            width: '100%',
+            padding: '10px',
+            margin: '10px 0',
+            border: '1px solid grey',
+            borderRadius: '6px',
+            backgroundColor: '#ebe2dd',
+          }}
+        />
         <Button variant="contained" type="submit">Register</Button>
       </form>
     </>

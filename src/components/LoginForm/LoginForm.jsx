@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import  authOperations  from 'redux/auth/auth-operations';
 import css from './LoginForm.module.css';
-import { Button,TextField  } from '@mui/material';
+import { Button } from '@mui/material';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -21,38 +21,34 @@ export const LoginForm = () => {
 
   return (
     <>
-      
-      {/* <TextField
-        helperText="Please enter contact name"
-        id="demo-helper-text-misaligned"
-        label="Name"
-        type="text"
-        value={storeFilter}
-        onChange={(e) => dispatch(changeFilter(e.currentTarget.value))} /> */}
-
-
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-        {/* <label className={css.label}> */}
-        {/* Email */}
-        
-          <TextField
-            helperText="Enter your email"
-            id="demo-helper-text-misaligned"
-            label="Email"         
-            type="email"
-            name="email" />
-        {/* </label> */}
+        <input
+          type="email"
+          name="email"
+          placeholder='Enter email'
+          style={{
+            width: '100%',
+            padding: '10px',
+            margin: '10px 0',
+            border: '1px solid grey',
+            borderRadius: '6px',
+            backgroundColor: '#ebe2dd',
+          }}         
+        />
 
-
-        {/* <label className={css.label}> */}
-        {/* Password */}
-        <TextField
-          helperText="Enter your password"
-          id="demo-helper-text-misaligned"
-          label="Password"
+        <input
           type="password"
-          name="password" />
-        {/* </label> */}
+          name="password"
+          placeholder='Enter password'
+          style={{
+            width: '100%',
+            padding: '10px',
+            margin: '10px 0',
+            border: '1px solid grey',
+            borderRadius: '6px',
+            backgroundColor: '#ebe2dd',
+          }}
+        />
         <Button variant="contained" type="submit">Log In</Button>
       </form>
     </>
