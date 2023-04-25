@@ -9,7 +9,7 @@ const HomeView = () => {
       backgroundColor: 'secondary.main',
 
     }}>
-      <Typography variant='h3'>
+      <Typography variant='h3' sx={{minWidth: '200px'}}>
         Hi!
         You can use this service to store and search your personal contacts. Enjoy your job!
       </Typography>
