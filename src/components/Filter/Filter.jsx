@@ -16,7 +16,6 @@ export const Filter = () => {
         className={css.input}
         value={storeFilter}
         onChange={(e) => dispatch(changeFilter(e.currentTarget.value))} />
-
     </Paper>
   )
 }

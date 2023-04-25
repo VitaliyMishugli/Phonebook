@@ -4,6 +4,10 @@
   margin: 10px 0;
   border: 1px solid grey;
   border-radius: 6px;
-  background-color: #ebe2dd;
-  
+  background-color: #ebe2dd;  
 }
+
+/* .input:focus{
+  outline: none;
+  border: 2px solid #ff4000;
+} */

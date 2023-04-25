@@ -8,7 +8,7 @@ import { Paper } from '@mui/material';
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (   
-    <Paper sx={{ backgroundColor: 'secondary.main'}}>      
+    <Paper sx={{ backgroundColor: 'secondary.main', minWidth: '200px'}}>      
       <HeaderBar >
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}

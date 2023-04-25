@@ -79,7 +79,7 @@ export const ContactForm = () => {
                   border: '1px solid grey',
                   borderRadius: '6px',
                   backgroundColor: '#ebe2dd',
-                }}
+                }}                
                 id={inputNameId}
                 autoComplete="off"
                 type="text"
